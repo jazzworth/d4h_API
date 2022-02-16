@@ -14,8 +14,8 @@ class Api_calls:
     # initialize object with object attributes
     def __init__(self):
 
-        # requried data for header and REST function
-        self.api_token =
+        # required data for header and REST function
+        self.api_token = 'your own api token goes here'
         self.header = {'Authorization': 'Bearer ' + self.api_token}
         self.server_url = 'https://api.d4h.org/v2/team/'
 
