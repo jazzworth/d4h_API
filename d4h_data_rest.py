@@ -15,7 +15,7 @@ class Api_calls:
     def __init__(self):
 
         # requried data for header and REST function
-        self.api_token = 'b72878b9fbee31350abd62fe0536d4e1ed1357c6'
+        self.api_token =
         self.header = {'Authorization': 'Bearer ' + self.api_token}
         self.server_url = 'https://api.d4h.org/v2/team/'
 
@@ -158,10 +158,10 @@ class Api_calls:
 
             # #write json to csv
             df.to_csv('output_incidents' + str(datetime.datetime.now()
-                                                ) + '.csv', index=False, encoding='utf-8')
-
+                                               ) + '.csv', index=False, encoding='utf-8')
 
     # function to add a task from a csv file
+
     def postTasks(self):
 
         # url for REST object as specified in the d4h api docs
@@ -183,9 +183,9 @@ class Api_calls:
                     api_url, json=json_lines, headers=self.header)
                 print(json_lines)
                 print(task_request.text)
-     
-     
+
     # function to add an exercise from a csv file
+
     def postExercises(self):
 
         # url for REST object as specified in the d4h api docs
@@ -247,9 +247,9 @@ class Api_calls:
                     api_url, json=json_lines, headers=self.header)
                 print(json_lines)
                 print(task_request.text)
-    
 
     # TODO create file agnostic iterator for POST in methods
+
     def iterateJson(self):
         data = pd.read_csv('upload_task.csv')
         data.to_json('temp_data.json', orient='records', lines=True)
@@ -266,10 +266,9 @@ output_object = Api_calls()
 # output_object.postTasks()
 # output_object.iterateJson()
 # output_object.getMembers()
-#output_object.getExercises()
-#output_object.getIncidents()
+# output_object.getExercises()
+# output_object.getIncidents()
 # output_object.getActivites()
-#output_object.postExercises()
-#output_object.postIncidents()
+# output_object.postExercises()
+# output_object.postIncidents()
 output_object.postEvents()
-
